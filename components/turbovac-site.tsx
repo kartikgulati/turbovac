@@ -806,7 +806,7 @@ function Footer() {
       </div>
       <div className="mx-auto mt-10 flex max-w-7xl flex-col gap-3 border-t border-white/10 pt-6 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between">
         <p>© 2026 TurboVac. All rights reserved.</p>
-        <p>Skiper UI-inspired motion primitives. Built with Next.js, Tailwind CSS, and Framer Motion.</p>
+        <p></p>
       </div>
     </footer>
   );
