@@ -44,6 +44,7 @@ const services = [
     title: "Commercial Duct Cleaning",
     icon: Building2,
     copy: "Cleaner air and better airflow for offices, retail spaces, clinics, and multi-unit properties.",
+    unavailable: true,
   },
   {
     title: "Residential Duct Cleaning",
@@ -54,21 +55,34 @@ const services = [
     title: "Industrial Duct Cleaning",
     icon: Factory,
     copy: "Heavy-duty HVAC cleaning for warehouses, plants, workshops, and high-demand facilities.",
+    unavailable: true,
   },
   {
-    title: "Dryer Vent Cleaning",
+    title: "Dryer Vent Cleaning and Sanitization",
     icon: Fan,
     copy: "Remove lint restrictions, improve dryer performance, and reduce fire-risk conditions.",
   },
 ];
 
 const features = [
-  ["Certified Technicians", BadgeCheck],
-  ["Affordable Pricing", Gauge],
-  ["Fast Response", TimerReset],
-  ["Advanced Equipment", Wrench],
-  ["Improved Air Quality", Wind],
-  ["Satisfaction Guaranteed", ShieldCheck],
+  {
+    title: "Summer Deals",
+    icon: Sparkles,
+    badge: "20% off",
+    copy: "Cool down your space with seasonal savings on duct cleaning for homes and small businesses.",
+  },
+  {
+    title: "Bundle Deals",
+    icon: Truck,
+    badge: "50% off",
+    copy: "Add two services and get a deeper discount — perfect for ducts plus dryer vent cleaning.",
+  },
+  {
+    title: "Referral Program",
+    icon: Award,
+    badge: "15% off",
+    copy: "Share TurboVac with a friend and both of you save on your next service visit.",
+  },
 ];
 
 const process = [
@@ -413,8 +427,13 @@ function Services() {
             <Reveal key={service.title} delay={index * 0.06}>
               <motion.article
                 whileHover={{ y: -8, scale: 1.01 }}
-                className="group h-full rounded-[1.75rem] border border-white/10 bg-white/[0.055] p-6 shadow-2xl shadow-black/20 transition hover:border-cyan-300/50"
+                className="group relative h-full rounded-[1.75rem] border border-white/10 bg-white/[0.055] p-6 shadow-2xl shadow-black/20 transition hover:border-cyan-300/50"
               >
+                {service.unavailable ? (
+                  <span className="absolute right-6 top-6 rounded-full bg-red-600 px-3 py-1 text-xs font-black uppercase tracking-[0.2em] text-white shadow-lg shadow-red-500/20">
+                    Unavailable
+                  </span>
+                ) : null}
                 <div className="mb-8 flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-400 text-slate-950 shadow-[0_0_28px_rgba(32,211,255,0.34)]">
                   <Icon className="h-7 w-7" />
                 </div>
@@ -434,21 +453,32 @@ function Services() {
 
 function WhyChoose() {
   return (
-    <Section id="why" eyebrow="Why Choose TurboVac" title="Premium service standards without complicated booking.">
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {features.map(([label, Icon], index) => (
-          <Reveal key={label as string} delay={index * 0.04}>
-            <motion.div
-              whileHover={{ y: -5 }}
-              className="flex h-full items-center gap-4 rounded-3xl border border-slate-200 bg-white p-6 shadow-xl shadow-slate-200/70"
-            >
-              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-slate-950 text-cyan-300">
-                <Icon className="h-6 w-6" />
-              </span>
-              <p className="text-lg font-black text-slate-950">{label as string}</p>
-            </motion.div>
-          </Reveal>
-        ))}
+    <Section id="why" eyebrow="TurboVac Offers" title="Premium services without  compromising your pocket.">
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {features.map((feature, index) => {
+          const Icon = feature.icon;
+          return (
+            <Reveal key={feature.title} delay={index * 0.04}>
+              <motion.div
+                whileHover={{ y: -5 }}
+                className="relative h-full overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-xl shadow-slate-200/70"
+              >
+                <span className="absolute right-6 top-6 rounded-full bg-red-600 px-3 py-1 text-xs font-black uppercase tracking-[0.22em] text-white shadow-lg shadow-red-500/20">
+                  {feature.badge}
+                </span>
+                <div className="mb-5 flex items-center gap-4">
+                  <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-slate-950 text-cyan-300 shadow-[0_0_28px_rgba(15,23,42,0.18)]">
+                    <Icon className="h-6 w-6" />
+                  </span>
+                  <div>
+                    <p className="text-lg font-black text-slate-950">{feature.title}</p>
+                  </div>
+                </div>
+                <p className="text-sm leading-6 text-slate-600">{feature.copy}</p>
+              </motion.div>
+            </Reveal>
+          );
+        })}
       </div>
     </Section>
   );
@@ -589,14 +619,14 @@ function QuoteForm() {
           <div className="h-full rounded-[2rem] bg-slate-950 p-8 text-white shadow-2xl">
             <p className="text-2xl font-black">Emergency and priority service</p>
             <p className="mt-4 leading-7 text-slate-300">
-              Need urgent dryer vent cleaning or after-hours commercial service? Call our response line and a TurboVac coordinator will help scope the job.
+              Need urgent duct cleaning or after-hours commercial service? Call our response line and a TurboVac coordinator will help scope the job.
             </p>
             <div className="mt-8 grid gap-4">
               {[
-                [Phone, "(416) 555-0198", "Call or text"],
+                [Phone, "(437) 439-6660", "Call or text"],
                 [Mail, "quotes@turbovac.com", "Quote requests"],
-                [Clock3, "Mon-Sat 7:00 AM - 8:00 PM", "Business hours"],
-                [MapPin, "Serving commercial and residential clients", "Service area"],
+                [Clock3, "Mon-Sun 7:00 AM - 8:00 PM", "Business hours"],
+                [MapPin, "Serving residential clients only for now", "Service area"],
               ].map(([Icon, title, label]) => (
                 <div key={String(title)} className="flex gap-4 rounded-3xl border border-white/10 bg-white/[0.055] p-4">
                   <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-cyan-400 text-slate-950">
