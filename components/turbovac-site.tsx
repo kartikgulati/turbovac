@@ -132,6 +132,102 @@ const faqs = [
   ],
 ];
 
+const serviceAreaCities = [
+  { name: "Barrie", status: "available", x: 575, y: 556 },
+  { name: "Belleville", status: "available", x: 725, y: 618 },
+  { name: "Brampton", status: "available", x: 598, y: 620 },
+  { name: "Brant", status: "available", x: 520, y: 642 },
+  { name: "Brantford", status: "available", x: 508, y: 632 },
+  { name: "Brockville", status: "available", x: 802, y: 596 },
+  { name: "Burlington", status: "available", x: 560, y: 646 },
+  { name: "Cambridge", status: "available", x: 500, y: 622 },
+  { name: "Clarence-Rockland", status: "available", x: 812, y: 496 },
+  { name: "Cornwall", status: "available", x: 846, y: 548 },
+  { name: "Dryden", status: "available", x: 154, y: 238 },
+  { name: "Elliot Lake", status: "available", x: 472, y: 446 },
+  { name: "Greater Sudbury", status: "available", x: 538, y: 426 },
+  { name: "Guelph", status: "available", x: 520, y: 606 },
+  { name: "Haldimand County", status: "available", x: 560, y: 674 },
+  { name: "Hamilton", status: "available", x: 548, y: 656 },
+  { name: "Kawartha Lakes", status: "available", x: 652, y: 564 },
+  { name: "Kenora", status: "available", x: 96, y: 246 },
+  { name: "Kingston", status: "available", x: 760, y: 624 },
+  { name: "Kitchener", status: "available", x: 488, y: 614 },
+  { name: "London", status: "available", x: 448, y: 678 },
+  { name: "Markham", status: "available", x: 628, y: 610 },
+  { name: "Mississauga", status: "available", x: 596, y: 636 },
+  { name: "Niagara Falls", status: "available", x: 586, y: 684 },
+  { name: "Norfolk County", status: "available", x: 528, y: 680 },
+  { name: "North Bay", status: "available", x: 608, y: 438 },
+  { name: "Orillia", status: "available", x: 594, y: 542 },
+  { name: "Oshawa", status: "available", x: 650, y: 618 },
+  { name: "Ottawa", status: "available", x: 782, y: 512 },
+  { name: "Owen Sound", status: "available", x: 500, y: 548 },
+  { name: "Pembroke", status: "available", x: 696, y: 462 },
+  { name: "Peterborough", status: "available", x: 690, y: 584 },
+  { name: "Pickering", status: "available", x: 640, y: 626 },
+  { name: "Port Colborne", status: "available", x: 584, y: 700 },
+  { name: "Prince Edward County", status: "available", x: 724, y: 642 },
+  { name: "Quinte West", status: "available", x: 708, y: 612 },
+  { name: "Richmond Hill", status: "available", x: 618, y: 598 },
+  { name: "Sarnia", status: "available", x: 384, y: 672 },
+  { name: "Sault Ste. Marie", status: "available", x: 402, y: 476 },
+  { name: "St. Catharines", status: "available", x: 574, y: 676 },
+  { name: "St. Thomas", status: "available", x: 442, y: 694 },
+  { name: "Stratford", status: "available", x: 466, y: 606 },
+  { name: "Temiskaming Shores", status: "available", x: 624, y: 344 },
+  { name: "Thorold", status: "available", x: 578, y: 680 },
+  { name: "Thunder Bay", status: "available", x: 248, y: 338 },
+  { name: "Timmins", status: "available", x: 516, y: 316 },
+  { name: "Toronto", status: "available", x: 618, y: 632 },
+  { name: "Vaughan", status: "available", x: 610, y: 608 },
+  { name: "Waterloo", status: "available", x: 484, y: 606 },
+  { name: "Welland", status: "available", x: 574, y: 690 },
+  { name: "Windsor", status: "available", x: 338, y: 716 },
+  { name: "Woodstock", status: "available", x: 476, y: 646 },
+] as const;
+
+const comingSoonProvinces = [
+  { name: "Alberta", status: "coming soon" },
+  { name: "British Columbia", status: "coming soon" },
+  { name: "Manitoba", status: "coming soon" },
+  { name: "New Brunswick", status: "coming soon" },
+  { name: "Newfoundland and Labrador", status: "coming soon" },
+  { name: "Nova Scotia", status: "coming soon" },
+  { name: "Prince Edward Island", status: "coming soon" },
+  { name: "Quebec", status: "coming soon" },
+  { name: "Saskatchewan", status: "coming soon" },
+] as const;
+
+const unavailableAreas = [] as const;
+
+const serviceStatusStyles = {
+  available: {
+    label: "Available",
+    dot: "bg-emerald-500",
+    text: "text-emerald-700",
+    border: "border-emerald-200",
+    bg: "bg-emerald-50",
+    fill: "#22c55e",
+  },
+  "not available": {
+    label: "Not available",
+    dot: "bg-red-500",
+    text: "text-red-700",
+    border: "border-red-200",
+    bg: "bg-red-50",
+    fill: "#ef4444",
+  },
+  "coming soon": {
+    label: "Coming soon",
+    dot: "bg-orange-400",
+    text: "text-orange-700",
+    border: "border-orange-200",
+    bg: "bg-orange-50",
+    fill: "#fb923c",
+  },
+} as const;
+
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
   visible: { opacity: 1, y: 0 },
@@ -778,21 +874,95 @@ function FAQ() {
   );
 }
 
-function MapPlaceholder() {
+function WhereWeServe() {
+  const groupedServiceAreas = [
+    ["Available Ontario Cities", serviceAreaCities],
+    ["Coming Soon Provinces", comingSoonProvinces],
+    ["Unavailable Areas", unavailableAreas],
+  ] as const;
+
   return (
-    <section className="px-5 pb-20 sm:px-8 lg:px-10">
-      <div className="mx-auto max-w-7xl overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-950 shadow-2xl">
-        <div className="industrial-grid flex min-h-80 items-center justify-center p-8 text-center text-white">
-          <div>
-            <MapPin className="mx-auto mb-4 h-10 w-10 text-cyan-300" />
-            <p className="text-2xl font-black">Google Maps Embed Placeholder</p>
-            <p className="mt-3 max-w-xl text-slate-300">
-              Add the verified service-area map iframe here when the business address or coverage area is finalized.
-            </p>
+    <Section id="service-area" eyebrow="Where We Serve" title="Ontario cities available now." className="scroll-mt-36 bg-slate-100">
+      <div className="grid gap-6 items-stretch lg:grid-cols-2">
+        <Reveal>
+          <div className="h-full overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-2xl shadow-slate-300/50">
+            <iframe
+              title="Google map of Ontario"
+              src="https://www.google.com/maps?q=Ontario,%20Canada&z=5&output=embed"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="block aspect-[540/614] w-full border-0"
+            />
+            <div className="flex flex-wrap items-center gap-3 border-t border-slate-200 bg-white/85 px-5 py-4">
+              {(["available", "coming soon", "not available"] as const).map((status) => {
+                const style = serviceStatusStyles[status];
+                const count = status === "available" ? serviceAreaCities.length : status === "coming soon" ? comingSoonProvinces.length : unavailableAreas.length;
+                return (
+                  <div key={status} className="inline-flex items-center gap-2 text-xs font-black text-slate-700">
+                    <span className={cn("h-2.5 w-2.5 rounded-full", style.dot)} />
+                    <span>{style.label}</span>
+                    <span className="text-slate-400">{count}</span>
+                  </div>
+                );
+              })}
+            </div>
           </div>
-        </div>
+        </Reveal>
+        <Reveal delay={0.1}>
+          <div className="h-full rounded-[2rem] border border-slate-200 bg-white p-6 shadow-xl shadow-slate-200/80">
+            <div className="flex items-start justify-between gap-5">
+              <div className="flex items-center gap-3">
+                <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-slate-950 text-cyan-300">
+                  <MapPin className="h-5 w-5" />
+                </span>
+                <div>
+                  <h3 className="text-xl font-black text-slate-950">Quick view</h3>
+                  <p className="text-sm font-semibold text-slate-500">Ontario cities are available. Other provinces are coming soon.</p>
+                </div>
+              </div>
+              <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-black text-slate-500">
+                {serviceAreaCities.length} cities
+              </span>
+            </div>
+            <div className="mt-6 max-h-[560px] overflow-y-auto pr-2">
+              <div className="grid gap-6">
+                {groupedServiceAreas.map(([label, areas]) => {
+                  const status = areas[0]?.status ?? "coming soon";
+                  const groupStyle = serviceStatusStyles[status];
+
+                  return (
+                    <div key={label}>
+                      <div className="mb-3 flex items-center gap-2">
+                        <span className={cn("h-2.5 w-2.5 rounded-full", groupStyle.dot)} />
+                        <p className="text-xs font-black uppercase tracking-[0.18em] text-slate-500">{label}</p>
+                        <span className="text-xs font-bold text-slate-400">{areas.length}</span>
+                      </div>
+                      <div className="flex flex-wrap gap-2">
+                        {areas.map((area) => {
+                          const style = serviceStatusStyles[area.status];
+                          return (
+                            <span
+                              key={area.name}
+                              className={cn("inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-xs font-black", style.border, style.bg, style.text)}
+                            >
+                              <span className={cn("h-2 w-2 rounded-full", style.dot)} />
+                              {area.name}
+                            </span>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+              <p className="mt-6 text-xs font-semibold leading-5 text-slate-400">
+                TurboVac service is available across listed Ontario cities. Canadian provinces outside Ontario are coming soon.
+              </p>
+            </div>
+          </div>
+        </Reveal>
       </div>
-    </section>
+    </Section>
   );
 }
 
@@ -903,8 +1073,8 @@ export function TurboVacSite() {
           <BeforeAfter />
           
           <QuoteForm />
+          <WhereWeServe />
           <FAQ />
-          <MapPlaceholder />
           <Testimonials />
         </main>
         <Footer />
