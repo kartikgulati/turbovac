@@ -119,8 +119,12 @@ const faqs = [
     "Most homes and businesses benefit from duct cleaning every 3 to 5 years. Renovations, pets, allergy concerns, or heavy dust can make earlier service worthwhile.",
   ],
   [
-    "Do you provide commercial quotes?",
-    "Yes. TurboVac quotes offices, retail spaces, industrial buildings, multi-unit properties, and specialty facilities after a quick scope review.",
+    "What are the benefits of duct cleaning?",
+    "Improves indoor air quality by removing accumulated dust, debris, pet hair, pollen, and other airborne particles from your HVAC system.Helps reduce allergens and irritants that may affect people with allergies, asthma, or respiratory sensitivities. Removes unpleasant odours caused by dust buildup, pets, smoke, or moisture inside the duct system. Helps your furnace and air conditioning system operate more efficiently by improving airflow and reducing strain on components. Can extend the lifespan of HVAC equipment by reducing dirt accumulation in critical components. Especially beneficial after renovations, moving into a new home, pet ownership, smoking indoors, or long periods without maintenance.",
+  ],
+  [
+    "What can happen if ducts are not cleaned?",
+    "Dust, dirt, pet dander, and debris can continue accumulating inside the ductwork over time.Poor indoor air circulation may contribute to stale air and unpleasant smells throughout the home. Excess buildup may reduce HVAC efficiency, causing the system to work harder and potentially increasing energy costs. Dirty ducts may worsen allergy or respiratory symptoms for sensitive individuals. Construction debris, mold caused by moisture issues, or excessive contamination can remain hidden inside the system if left untreated. Neglected HVAC systems may experience increased wear on components over time.",
   ],
   [
     "How long does service take?",
