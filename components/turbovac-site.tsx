@@ -30,6 +30,8 @@ import {
 import { AnimatePresence, motion, useInView, useScroll, useTransform } from "framer-motion";
 import { FormEvent, ReactNode, useEffect, useMemo, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
+import afterImage from "./assets/after.jpeg";
+import beforeImage from "./assets/before.jpeg";
 
 const navItems = [
   ["About", "about"],
@@ -486,7 +488,7 @@ function Hero() {
 
 function About() {
   return (
-    <Section id="about" eyebrow="About TurboVac" title="Cleaner HVAC systems, clearer expectations.">
+    <Section id="about" eyebrow="About TurboVac" title="Local experts with a passion for cleaner air and healthier spaces.">
       <div className="grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr]">
         <Reveal>
           <div className="overflow-hidden rounded-[2rem] bg-slate-900 shadow-2xl">
@@ -495,13 +497,13 @@ function About() {
         </Reveal>
         <Reveal delay={0.1}>
           <p className="text-lg leading-8 text-slate-600">
-            TurboVac is built for property owners, homeowners, and facility teams that need reliable scheduling, careful work, and measurable indoor-air improvements. Certified technicians use modern equipment to clean ductwork, returns, vents, and dryer exhaust paths without disrupting your space.
+            TurboVac was founded on the belief that cleaner air should be accessible to everyone. With over a decade of experience, our team has served thousands of homes and businesses across Ontario, delivering top-tier duct and vent cleaning services. We combine industry-leading equipment with a customer-first approach to improve indoor air quality, enhance HVAC performance, and create healthier environments for our clients. Our commitment to excellence and transparency has earned us a reputation as trusted experts in the field. <b>Locals for locals</b>, we take pride in helping our community breathe easier, one clean vent at a time.
           </p>
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
             {[
-              [12, "+", "Years Experience"],
-              [4200, "+", "Projects Completed"],
-              [98, "%", "Customer Satisfaction"],
+              [4, "+", "Years Experience"],
+              [100, "+", "Projects Completed"],
+              [99, "%", "Customer Satisfaction"],
             ].map(([value, suffix, label]) => (
               <div key={label} className="rounded-3xl border border-slate-200 bg-white p-6 shadow-xl shadow-slate-200/70">
                 <p className="text-4xl font-black text-slate-950">
@@ -612,12 +614,18 @@ function BeforeAfter() {
       <Reveal>
         <div className="mx-auto max-w-5xl">
           <div className="relative overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-950 shadow-2xl">
-            <div className="aspect-[16/9] bg-[url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1600&q=85')] bg-cover bg-center opacity-80" />
+            <div
+              className="aspect-[16/9] bg-cover bg-center opacity-80"
+              style={{ backgroundImage: `url(${beforeImage.src})` }}
+            />
             <div
               className="absolute inset-0 overflow-hidden"
               style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
             >
-              <div className="h-full w-full bg-[url('https://images.unsplash.com/photo-1581092162384-8987c1d64718?auto=format&fit=crop&w=1600&q=85')] bg-cover bg-center" />
+              <div
+                className="h-full w-full bg-cover bg-center"
+                style={{ backgroundImage: `url(${afterImage.src})` }}
+              />
             </div>
             <div className="absolute inset-y-0 z-10 w-1 bg-cyan-300 shadow-[0_0_28px_rgba(32,211,255,0.9)]" style={{ left: `${position}%` }} />
             <input
