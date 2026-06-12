@@ -488,7 +488,7 @@ function Hero() {
 
 function About() {
   return (
-    <Section id="about" eyebrow="About TurboVac" title="Local experts with a passion for cleaner air and healthier spaces.">
+    <Section id="about" eyebrow="About TurboVac" title="Your home might look spotless—but your air ducts tell a different story.">
       <div className="grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr]">
         <Reveal>
           <div className="overflow-hidden rounded-[2rem] bg-slate-900 shadow-2xl">
