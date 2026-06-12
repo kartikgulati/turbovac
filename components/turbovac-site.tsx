@@ -42,6 +42,7 @@ const navItems = [
 ];
 
 const services = [
+ 
   {
     title: "Commercial Duct Cleaning",
     icon: Building2,
@@ -51,20 +52,20 @@ const services = [
   {
     title: "Residential Duct Cleaning",
     icon: Home,
-    copy: "Whole-home duct cleaning that helps reduce dust buildup, allergens, and stale indoor air.",
+    copy: "Thorough whole-home duct cleaning that reduces dust, allergens, pet dander, and stale indoor air for a healthier living environment.",
   },
   {
-    title: "Industrial Duct Cleaning",
-    icon: Factory,
-    copy: "Heavy-duty HVAC cleaning for warehouses, plants, workshops, and high-demand facilities.",
-    unavailable: true,
-  },
-  {
-    title: "Dryer Vent Cleaning and Sanitization",
+    title: "Dryer Vent Cleaning",
     icon: Fan,
-    copy: "Remove lint restrictions, improve dryer performance, and reduce fire-risk conditions.",
+    copy: "Remove lint buildup and restrictions to improve dryer performance, lower energy bills, and reduce fire-risk conditions.",
+  },
+  {
+    title: "Sanitization (Dryer Vent, Ducts)",
+    icon: Fan,
+    copy: "Deep-clean and sanitize your dryer vent to eliminate bacteria, mold spores, and unpleasant odors caused by trapped moisture and lint.",
   },
 ];
+
 
 const features = [
   {
