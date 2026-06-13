@@ -33,12 +33,13 @@ import { cn } from "@/lib/utils";
 import afterImage from "./assets/after.jpeg";
 import beforeImage from "./assets/before.jpeg";
 
-const navItems = [
-  ["About", "about"],
-  ["Services", "services"],
-  ["Process", "process"],
-  ["Reviews", "testimonials"],
-  ["Quote", "quote"],
+const navItems: ReadonlyArray<readonly [string, string, boolean]> = [
+  ["About", "about", false],
+  ["Services", "services", false],
+  ["Process", "process", false],
+  ["Our Work", "/our-work", true],
+  ["Reviews", "testimonials", false],
+  ["Quote", "quote", false],
 ];
 
 const services = [
@@ -359,10 +360,11 @@ function Navbar() {
             <span className="text-lg font-black">TurboVac</span>
           </a>
           <div className="hidden items-center gap-1 md:flex">
-            {navItems.map(([label, id]) => (
+            {navItems.map(([label, id, external]) => (
               <a
                 key={id}
-                href={`#${id}`}
+                href={external ? id : `#${id}`}
+                {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                 className="rounded-full px-4 py-2 text-sm font-semibold text-white/78 transition hover:bg-white/10 hover:text-white"
               >
                 {label}
@@ -393,10 +395,11 @@ function Navbar() {
               exit={{ opacity: 0, y: -12 }}
               className="mx-auto mt-3 grid max-w-7xl gap-2 rounded-3xl border border-white/15 bg-slate-950/88 p-4 text-white backdrop-blur-2xl md:hidden"
             >
-              {navItems.map(([label, id]) => (
+              {navItems.map(([label, id, external]) => (
                 <a
                   key={id}
-                  href={`#${id}`}
+                  href={external ? id : `#${id}`}
+                  {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                   className="rounded-2xl px-4 py-3 font-semibold hover:bg-white/10"
                   onClick={() => setOpen(false)}
                 >
@@ -997,8 +1000,15 @@ function Footer() {
         <div>
           <p className="mb-4 font-black">Quick Navigation</p>
           <div className="grid gap-2">
-            {navItems.map(([label, id]) => (
-              <a key={id} href={`#${id}`} className="text-slate-400 transition hover:text-cyan-200">{label}</a>
+            {navItems.map(([label, id, external]) => (
+              <a
+                key={id}
+                href={external ? id : `#${id}`}
+                {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                className="text-slate-400 transition hover:text-cyan-200"
+              >
+                {label}
+              </a>
             ))}
           </div>
         </div>
