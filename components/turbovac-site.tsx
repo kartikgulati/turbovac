@@ -444,7 +444,7 @@ function Hero() {
             Certified duct cleaning for healthier buildings
           </motion.p>
           <motion.h1 variants={fadeUp} className="text-balance text-5xl font-black leading-[1.02] sm:text-6xl lg:text-7xl">
-            Professional Duct Cleaning Services You Can Trust
+            Your house might look clean, but your air ducts are not.
           </motion.h1>
           <motion.p variants={fadeUp} className="mt-6 max-w-2xl text-lg leading-8 text-slate-200 sm:text-xl">
             TurboVac improves airflow, reduces dust, and restores cleaner indoor air with commercial, residential, industrial, and dryer vent cleaning services.
@@ -492,7 +492,7 @@ function Hero() {
 
 function About() {
   return (
-    <Section id="about" eyebrow="About TurboVac" title="Your home might look spotless—but your air ducts tell a different story.">
+    <Section id="about" eyebrow="About TurboVac" title="We're Duct Cleaning Experts">
       <div className="grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr]">
         <Reveal>
           <div className="overflow-hidden rounded-[2rem] bg-slate-900 shadow-2xl">
@@ -506,7 +506,7 @@ function About() {
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
             {[
               [4, "+", "Years Experience"],
-              [100, "+", "Projects Completed"],
+              [50, "+", "Projects Completed"],
               [99, "%", "Customer Satisfaction"],
             ].map(([value, suffix, label]) => (
               <div key={label} className="rounded-3xl border border-slate-200 bg-white p-6 shadow-xl shadow-slate-200/70">
@@ -932,7 +932,7 @@ function WhereWeServe() {
                   <MapPin className="h-5 w-5" />
                 </span>
                 <div>
-                  <h3 className="text-xl font-black text-slate-950">Quick view</h3>
+                  <h3 className="text-xl font-black text-slate-950">Our Service Areas</h3>
                   <p className="text-sm font-semibold text-slate-500">Ontario cities are available. Other provinces are coming soon.</p>
                 </div>
               </div>
