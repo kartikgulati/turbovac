@@ -63,7 +63,7 @@ const services = [
   {
     title: "Sanitization (Dryer Vent, Ducts)",
     icon: Fan,
-    copy: "Deep-clean and sanitize your dryer vent to eliminate bacteria, mold spores, and unpleasant odors caused by trapped moisture and lint.",
+    copy: "Deep-clean and sanitize your dryer vent to eliminate bacteria, mold spores, and unpleasant odors caused by trapped moisture and lint",
   },
 ];
 
