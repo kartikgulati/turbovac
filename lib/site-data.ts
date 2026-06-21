@@ -205,6 +205,34 @@ export const comingSoonProvinces = [
 
 export const unavailableAreas = [] as const satisfies ReadonlyArray<ServiceArea>;
 
+export type Project = {
+  title: string;
+  location: string;
+  service: string;
+  description: string;
+};
+
+export const projects: ReadonlyArray<Project> = [
+  {
+    title: "Residential Duct Cleaning",
+    location: "Toronto, ON",
+    service: "Whole-home duct cleaning",
+    description: "Restored healthy airflow in a family home after 6 years without service. Removed years of dust and pet dander buildup.",
+  },
+  {
+    title: "Commercial Office Build-Out",
+    location: "Mississauga, ON",
+    service: "Commercial duct cleaning",
+    description: "Cleared construction debris from a 12,000 sq ft office HVAC system ahead of tenant move-in. Air quality verified post-service.",
+  },
+  {
+    title: "Dryer Vent Restoration",
+    location: "Hamilton, ON",
+    service: "Dryer vent cleaning",
+    description: "Cleared a heavily restricted dryer vent that was causing 90+ minute dry cycles. Drying time back to under 40 minutes and fire risk eliminated.",
+  },
+];
+
 export const serviceStatusStyles = {
   available: {
     label: "Available",
