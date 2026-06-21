@@ -96,13 +96,7 @@ function BeforeAfterCard({ title, location, service, description, index }: {
           <h3 className="text-xl font-black text-slate-950">{title}</h3>
           <p className="mt-1 text-sm font-semibold text-slate-500">{location}</p>
           <p className="mt-4 flex-1 leading-7 text-slate-600">{description}</p>
-          <a
-            href="#"
-            onClick={(event) => event.preventDefault()}
-            className="mt-6 inline-flex items-center gap-2 text-sm font-black text-cyan-700"
-          >
-            View project details <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
-          </a>
+         
         </div>
       </motion.article>
     </Reveal>
