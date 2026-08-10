@@ -3,6 +3,7 @@
 import { Section } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
 import { CountUp } from "@/components/ui/count-up";
+import heroImage from "@/components/assets/hero-bg-image.png";
 
 const aboutStats = [
   [4, "+", "Years Experience"],
@@ -16,7 +17,7 @@ export function About() {
       <div className="grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr]">
         <Reveal>
           <div className="overflow-hidden rounded-[2rem] bg-slate-900 shadow-2xl">
-            <div className="aspect-[4/3] bg-[url('https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=1400&q=85')] bg-cover bg-center" />
+            <div className="aspect-[4/3] bg-cover bg-center" style={{ backgroundImage: `url(${heroImage.src})` }} object-right />
           </div>
         </Reveal>
         <Reveal delay={0.1}>

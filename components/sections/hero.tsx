@@ -4,6 +4,10 @@ import { motion, useScroll, useTransform, type Variants } from "framer-motion";
 import { Phone, Sparkles, Truck, Wind } from "lucide-react";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Reveal } from "@/components/ui/reveal";
+import heroImage from "@/components/assets/hero-bg-image.png";
+import hero4_5Image from "@/components/assets/hero-4:5-section-image.jpg";
+
+
 
 const heroFadeUp: Variants = {
   hidden: { opacity: 0, y: 28 },
@@ -22,10 +26,14 @@ export function Hero() {
 
   return (
     <section id="top" className="relative min-h-[92svh] overflow-hidden bg-slate-950 px-5 pb-16 pt-32 text-white sm:px-8 lg:px-10">
-      <motion.div
-        style={{ y }}
-        className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=2200&q=85')] bg-cover bg-center opacity-40"
-      />
+        <motion.div
+    style={{
+      y,
+      backgroundImage: `url(${heroImage.src})`,
+    }}
+    role="presentation"
+    className="absolute inset-0 bg-cover bg-center opacity-60"
+  />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_20%,rgba(32,211,255,0.32),transparent_30%),linear-gradient(90deg,rgba(2,6,23,0.94),rgba(15,23,42,0.72),rgba(2,6,23,0.55))]" />
       <div className="industrial-grid absolute inset-0 opacity-40" />
       <motion.div
@@ -69,7 +77,9 @@ export function Hero() {
         </motion.div>
         <Reveal delay={0.25} className="hidden lg:block">
           <div className="glass relative overflow-hidden rounded-[2rem] p-5">
-            <div className="aspect-[4/5] rounded-[1.5rem] bg-[url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=85')] bg-cover bg-center" />
+            <div  className="aspect-[4/5] rounded-[1.5rem] bg-cover bg-center"
+                style={{  backgroundImage: `url(${hero4_5Image.src})` }}
+             />
             <div className="absolute bottom-9 left-9 right-9 rounded-3xl border border-white/16 bg-slate-950/70 p-5 backdrop-blur-xl">
               <div className="flex items-center gap-3">
                 <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-cyan-400 text-slate-950">
