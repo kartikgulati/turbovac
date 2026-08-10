@@ -16,7 +16,7 @@ export function Services() {
             <Reveal key={service.title} delay={index * 0.06}>
               <motion.article
                 whileHover={{ y: -8, scale: 1.01 }}
-                className="group relative h-full rounded-[1.75rem] border border-white/10 bg-white/[0.055] p-6 shadow-2xl shadow-black/20 transition hover:border-cyan-300/50"
+                className="group relative flex h-full flex-col rounded-[1.75rem] border border-white/10 bg-white/[0.055] p-6 shadow-2xl shadow-black/20 transition hover:border-cyan-300/50"
               >
                 {service.unavailable ? (
                   <span className="absolute right-6 top-6 rounded-full bg-red-600 px-3 py-1 text-xs font-black uppercase tracking-[0.2em] text-white shadow-lg shadow-red-500/20">
@@ -28,7 +28,7 @@ export function Services() {
                 </div>
                 <h3 className="text-xl font-black">{service.title}</h3>
                 <p className="mt-4 min-h-24 leading-7 text-slate-300">{service.copy}</p>
-                <a href="#quote" className="mt-7 inline-flex items-center gap-2 text-sm font-black text-cyan-200">
+                <a href="#quote" className="mt-auto inline-flex items-center gap-2 pt-7 text-sm font-black text-cyan-200">
                   Request service <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
                 </a>
               </motion.article>
