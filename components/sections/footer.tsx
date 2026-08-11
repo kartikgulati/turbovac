@@ -4,9 +4,9 @@ import { Facebook, Instagram, MessageCircle, Wind } from "lucide-react";
 import { navItems } from "@/lib/site-data";
 
 const socialLinks = [
-  { label: "Instagram", href: "#", icon: Instagram },
-  { label: "Facebook", href: "#", icon: Facebook },
-  { label: "WhatsApp", href: "#", icon: MessageCircle },
+  { label: "Instagram", href: "https://www.facebook.com/share/1BbToHzwRQ/?mibextid=wwXIfr", icon: Instagram },
+  { label: "Facebook", href: "https://www.facebook.com/share/1BbToHzwRQ/?mibextid=wwXIfr", icon: Facebook },
+  { label: "WhatsApp", href: "https://www.facebook.com/share/1BbToHzwRQ/?mibextid=wwXIfr", icon: MessageCircle },
 ] as const;
 
 export function Footer() {
