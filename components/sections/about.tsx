@@ -17,7 +17,7 @@ export function About() {
       <div className="grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr]">
         <Reveal>
           <div className="overflow-hidden rounded-[2rem] bg-slate-900 shadow-2xl">
-            <div className="aspect-[4/3] bg-cover bg-center" style={{ backgroundImage: `url(${heroImage.src})` }} object-right />
+            <div className="aspect-[4/3] bg-cover bg-center" style={{ backgroundImage: `url(${heroImage.src})` }} />
           </div>
         </Reveal>
         <Reveal delay={0.1}>

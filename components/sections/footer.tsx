@@ -1,9 +1,13 @@
 "use client";
 
-import { Wind } from "lucide-react";
+import { Facebook, Instagram, MessageCircle, Wind } from "lucide-react";
 import { navItems } from "@/lib/site-data";
 
-const socialLabels = ["in", "f", "x"] as const;
+const socialLinks = [
+  { label: "Instagram", href: "#", icon: Instagram },
+  { label: "Facebook", href: "#", icon: Facebook },
+  { label: "WhatsApp", href: "#", icon: MessageCircle },
+] as const;
 
 export function Footer() {
   return (
@@ -41,9 +45,14 @@ export function Footer() {
             <a href="tel:+14165550198" className="hover:text-cyan-200">(416) 555-0198</a>
             <a href="mailto:quotes@turbovac.com" className="hover:text-cyan-200">quotes@turbovac.com</a>
             <div className="mt-3 flex gap-3">
-              {socialLabels.map((label) => (
-                <a key={label} href="#" aria-label={`TurboVac social link ${label}`} className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 font-black text-white transition hover:bg-cyan-400 hover:text-slate-950">
-                  {label}
+              {socialLinks.map(({ label, href, icon: Icon }) => (
+                <a
+                  key={label}
+                  href={href}
+                  aria-label={`TurboVac social link ${label}`}
+                  className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-cyan-400 hover:text-slate-950"
+                >
+                  <Icon className="h-4 w-4" />
                 </a>
               ))}
             </div>
