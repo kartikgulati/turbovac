@@ -22,7 +22,7 @@ export function ResultsCta() {
               href="tel:+14165550198"
               className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 px-6 text-sm font-black text-white backdrop-blur-xl transition hover:border-cyan-300/70"
             >
-              <Phone className="h-4 w-4" /> Call (416) 555-0198
+              <Phone className="h-4 w-4" /> Call +1 (437) 439-6660
             </a>
           </div>
         </div>

@@ -42,8 +42,8 @@ export function Footer() {
         <div>
           <p className="mb-4 font-black">Contact</p>
           <div className="grid gap-2 text-slate-400">
-            <a href="tel:+14165550198" className="hover:text-cyan-200">(416) 555-0198</a>
-            <a href="mailto:quotes@turbovac.com" className="hover:text-cyan-200">quotes@turbovac.com</a>
+            <a href="tel:+14165550198" className="hover:text-cyan-200">+1 (437) 439-6660</a>
+            <a href="mailto:rajdhillongg@gmail.com" className="hover:text-cyan-200">rajdhillongg@gmail.com</a>
             <div className="mt-3 flex gap-3">
               {socialLinks.map(({ label, href, icon: Icon }) => (
                 <a

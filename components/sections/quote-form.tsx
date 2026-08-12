@@ -12,7 +12,7 @@ type ContactRow = readonly [LucideIcon, string, string];
 
 const contactInfo: ReadonlyArray<ContactRow> = [
   [Phone, "(437) 439-6660", "Call or text"],
-  [Mail, "quotes@turbovac.com", "Quote requests"],
+  [Mail, "rajdhillongg@gmail.com", "Quote requests"],
   [Clock3, "Mon-Sun 7:00 AM - 8:00 PM", "Business hours"],
   [MapPin, "Serving residential clients only for now", "Service area"],
 ];

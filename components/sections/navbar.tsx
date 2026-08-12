@@ -5,7 +5,7 @@ import { Menu, Phone, Wind, X } from "lucide-react";
 import { useState } from "react";
 import { navItems } from "@/lib/site-data";
 
-const PHONE_NUMBER = "(416) 555-0198";
+const PHONE_NUMBER = "+1 (437) 439-6660";
 const PHONE_HREF = "tel:+14165550198";
 
 const navHref = (id: string, external: boolean) => {
